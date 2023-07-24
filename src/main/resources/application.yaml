@@ -1,0 +1,17 @@
+server:
+  port: 9090
+  servlet:
+    encoding:
+      charset: "UTF-8"
+      force: true
+springdoc:
+  version: 1
+spring:
+  application:
+    name: savingFootprints
+  devtools:
+    add-properties: false
+  profiles:
+    active: local
+  webflux:
+    base-path: "api/v1/"
