@@ -5,6 +5,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface UserGateway {
-    public Mono<User> save(User user);
+    Mono<User> save(User user);
     Flux<User> getAllUsers();
+    Mono<User> getById(String id);
 }

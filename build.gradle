@@ -38,6 +38,7 @@ dependencies {
 	implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
 	implementation 'org.reactivecommons.utils:object-mapper-api:0.1.0'
 	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 }
 
 tasks.named('test') {

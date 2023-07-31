@@ -3,9 +3,9 @@ CREATE TABLE IF NOT EXISTS users (
      name varchar(50) NOT NULL,
      last_name varchar(50) NOT NULL,
      document_type varchar(3) NOT NULL,
-     document varchar(20) NOT NULL,
+     document varchar(20) NOT NULL UNIQUE,
      phone varchar(15) NOT NULL,
-     email varchar(20) NOT NULL,
+     email varchar(20) NOT NULL UNIQUE,
      CONSTRAINT users_document_type_check CHECK (document_type IN ('CC', 'CE', 'TI'))
 );
 

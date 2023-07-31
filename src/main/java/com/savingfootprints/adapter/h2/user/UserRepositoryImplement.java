@@ -37,4 +37,10 @@ public class UserRepositoryImplement extends AdapterOperations<User, UserData, S
                 .map(this::convertToEntity)
                 .onErrorMap(e -> new ExceptionFootPrints(e, GET_USERS));
     }
+
+    @Override
+    public Mono<User> getById(String id) {
+        return repository.findById(id)
+                .map(this::convertToEntity);
+    }
 }

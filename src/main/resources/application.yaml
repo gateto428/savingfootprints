@@ -6,6 +6,10 @@ server:
       force: true
 springdoc:
   version: 1
+management:
+  endpoint:
+    health:
+      show-details: always
 spring:
   application:
     name: savingFootprints
