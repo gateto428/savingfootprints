@@ -13,6 +13,7 @@ import reactor.core.publisher.Mono;
 
 import static com.savingfootprints.model.enums.ExceptionEnum.GET_USERS;
 import static com.savingfootprints.model.enums.ExceptionEnum.SAVE_USERS;
+import static com.savingfootprints.model.enums.ExceptionEnum.USER_NOT_FOUND;
 
 
 @Repository
@@ -42,5 +43,17 @@ public class UserRepositoryImplement extends AdapterOperations<User, UserData, S
     public Mono<User> getById(String id) {
         return repository.findById(id)
                 .map(this::convertToEntity);
+    }
+
+    @Override
+    public Mono<User> updateUser(User user) {
+        return repository.updateUser(user)
+                .then(this.getById(user.getId()));
+    }
+
+    @Override
+    public Mono<Void> removeUser(String id) {
+        return repository.deleteById(id)
+                .onErrorMap(e -> new ExceptionFootPrints(e, USER_NOT_FOUND));
     }
 }

@@ -8,4 +8,7 @@ public interface UserGateway {
     Mono<User> save(User user);
     Flux<User> getAllUsers();
     Mono<User> getById(String id);
+    Mono<User> updateUser(User user);
+
+    Mono<Void> removeUser(String id);
 }

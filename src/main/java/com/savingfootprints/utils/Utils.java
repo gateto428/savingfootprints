@@ -1,6 +1,6 @@
 package com.savingfootprints.utils;
 
-import com.savingfootprints.controllers.service.Response;
+import com.savingfootprints.controllers.Response;
 import com.savingfootprints.model.ExceptionFootPrints;
 import reactor.core.publisher.Mono;
 import reactor.core.scheduler.Schedulers;

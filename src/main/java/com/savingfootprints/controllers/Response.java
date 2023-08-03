@@ -1,4 +1,4 @@
-package com.savingfootprints.controllers.service;
+package com.savingfootprints.controllers;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;
