@@ -11,8 +11,8 @@ CREATE TABLE IF NOT EXISTS users (
 
 CREATE TABLE IF NOT EXISTS Pet (
      id varchar(50) NOT NULL PRIMARY KEY,
-     type_pet INT NOT NULL,
-     size_pet varchar(1) NOT NULL,
+     type_pet varchar(5) NOT NULL,
+     size_pet varchar(10) NOT NULL,
      description_pet TEXT NOT NULL,
      location varchar(50) NOT NULL,
      state BOOLEAN NOT NULL DEFAULT true,
@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS Pet (
 CREATE TABLE IF NOT EXISTS Picture (
      id varchar(50) NOT NULL PRIMARY KEY,
      path varchar(250) NOT NULL,
-     id_pet varchar(50) NOT NULL,
-     CONSTRAINT Picture_fk0 FOREIGN KEY (id_pet) REFERENCES Pet(id)
+     pet varchar(50) NOT NULL,
+     CONSTRAINT Picture_fk0 FOREIGN KEY (pet) REFERENCES Pet(id)
 );
 
 CREATE TABLE IF NOT EXISTS Initiative (
@@ -35,8 +35,8 @@ CREATE TABLE IF NOT EXISTS Initiative (
      description varchar(250) NOT NULL,
      goal DECIMAL(50),
      state BOOLEAN NOT NULL DEFAULT true,
-     id_pet varchar(50) NOT NULL,
-     CONSTRAINT Initiative_fk0 FOREIGN KEY (id_pet) REFERENCES Pet(id)
+     pet varchar(50) NOT NULL,
+     CONSTRAINT Initiative_fk0 FOREIGN KEY (pet) REFERENCES Pet(id)
 );
 
 CREATE TABLE IF NOT EXISTS Donation (

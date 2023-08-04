@@ -3,8 +3,10 @@ package com.savingfootprints.model;
 import com.savingfootprints.model.enums.SizePet;
 import com.savingfootprints.model.enums.TypePet;
 import lombok.Builder;
+import lombok.Data;
 
-@Builder
+@Builder(toBuilder = true)
+@Data
 public class Pet {
     private String id;
     private TypePet typePet;
@@ -12,6 +14,6 @@ public class Pet {
     private String descriptionPet;
     private String location;
     private Boolean state;
-    private User owner;
-    private User creator;
+    private String owner;
+    private String creator;
 }
